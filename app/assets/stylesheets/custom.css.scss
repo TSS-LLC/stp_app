@@ -1,17 +1,9 @@
 @import "bootstrap";
 
-/* mixins, variables, etc. */
+/* Variables */
+$lightGray: #999;
 
-$grayMediumLight: #eaeaea;
-$grayLight: #999;
-$grayDarker: #222;
-$gray: #555;
-
-$stpPurple: #530473;
-$stpBlack: #000000;
-$stpGold: #FDC800;
-
-/* universal */
+/* Universal */
 
 html {
   overflow-y: scroll;
@@ -32,8 +24,8 @@ textarea {
 .center {
   text-align: center;
   h1 {
-	  margin-bottom: 10px;
-	}
+    margin-bottom: 10px;
+  }
 }
 
 /* typography */
@@ -55,7 +47,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $grayLight;
+  color: $lightGray;
 }
 
 p {
@@ -76,9 +68,9 @@ p {
   font-weight: bold;
   line-height: 1;
   &:hover {
-	  color: #fff;
-	  text-decoration: none;
-	}
+    color: #fff;
+    text-decoration: none;
+  }
 }
 
 /* footer */
@@ -86,23 +78,23 @@ p {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid $grayMediumLight;
-  color: $grayLight;
+  border-top: 1px solid #eaeaea;
+  color: $lightGray;
   a {
-  	color: $gray;
-  	&:hover {
-		  color: $grayDarker;
-		}
+    color: #555;
+    &:hover {
+      color: #222;
+    }
   }
   small {
-	  float: left;
-	}
-	ul {
-	  float: right;
-	  list-style: none;
-	  li {
-		  float: left;
-		  margin-left: 10px;
-		}
-	}
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
+    }
+  }
 }

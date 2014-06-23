@@ -10,55 +10,39 @@ require 'rails_helper'
 # end
 
 describe "Pages" do
+
+	subject { page }
+
 	# Home Page Tests
   describe "Home page" do
-    it "should have the content 'Sigma Theta Psi'" do
-      visit '/pages/home'
-      expect(page).to have_content('Sigma Theta Psi')
-    end
-    it "should have the base title" do
-    	visit '/pages/home'
-    	expect(page).to have_title("Sigma Theta Psi")
-    end
-    it "should not have a custom title" do
-    	visit '/pages/home'
-    	expect(page).not_to have_title("Home")
-    end
+  	before { visit root_path }
+
+    it { should have_content('Sigma Theta Psi') }
+    it { should have_title('Sigma Theta Psi') }
+    it { should_not have_title('Home') }
   end
 
   # Help Page Tests
   describe "Help page" do
-  	it "should have the content 'Help'" do
-  		visit '/pages/help'
-  		expect(page).to have_content('Help')
-  	end
-  	it "should have the right title" do
-    	visit '/pages/help'
-    	expect(page).to have_title("Sigma Theta Psi | Help")
-    end
+  	before { visit help_path }
+
+  	it { should have_content('Help') }
+  	it { should have_title('Sigma Theta Psi | Help') }
   end
 
   # About Page Tests
   describe "About page" do
-  	it "should have the content 'About'" do
-  		visit '/pages/about'
-  		expect(page).to have_content('About')
-  	end
-  	it "should have the right title" do
-    	visit '/pages/about'
-    	expect(page).to have_title("Sigma Theta Psi | About")
-    end
+  	before { visit about_path }
+
+  	it { should have_content('About') }
+  	it { should have_title('Sigma Theta Psi | About') }
   end
 
   # Contact Page Tests
   describe "Contact page" do
-  	it "should have the content 'Contact'" do
-  		visit '/pages/contact'
-  		expect(page).to have_content('Contact')
-  	end
-  	it "should have the right title" do
-    	visit '/pages/contact'
-    	expect(page).to have_title("Sigma Theta Psi | Contact")
-    end
+  	before { visit contact_path }
+
+  	it { should have_content('Contact') }
+  	it { should have_title('Sigma Theta Psi | Contact') }
   end
 end
