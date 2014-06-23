@@ -12,9 +12,13 @@ require 'rails_helper'
 describe "Pages" do
 	# Home Page Tests
   describe "Home page" do
-    it "should have the content 'Sample App'" do
+    it "should have the content 'Sigma Theta Psi'" do
       visit '/pages/home'
-      expect(page).to have_content('Sample App')
+      expect(page).to have_content('Sigma Theta Psi')
+    end
+    it "should have the right title" do
+    	visit '/pages/home'
+    	expect(page).to have_title("Sigma Theta Psi | Home")
     end
   end
 
@@ -24,6 +28,10 @@ describe "Pages" do
   		visit '/pages/help'
   		expect(page).to have_content('Help')
   	end
+  	it "should have the right title" do
+    	visit '/pages/help'
+    	expect(page).to have_title("Sigma Theta Psi | Help")
+    end
   end
 
   # About Page Tests
@@ -32,5 +40,9 @@ describe "Pages" do
   		visit '/pages/about'
   		expect(page).to have_content('About')
   	end
+  	it "should have the right title" do
+    	visit '/pages/about'
+    	expect(page).to have_title("Sigma Theta Psi | About")
+    end
   end
 end
