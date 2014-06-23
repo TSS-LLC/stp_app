@@ -16,9 +16,13 @@ describe "Pages" do
       visit '/pages/home'
       expect(page).to have_content('Sigma Theta Psi')
     end
-    it "should have the right title" do
+    it "should have the base title" do
     	visit '/pages/home'
-    	expect(page).to have_title("Sigma Theta Psi | Home")
+    	expect(page).to have_title("Sigma Theta Psi")
+    end
+    it "should not have a custom title" do
+    	visit '/pages/home'
+    	expect(page).not_to have_title("Home")
     end
   end
 
