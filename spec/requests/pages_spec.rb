@@ -45,4 +45,16 @@ describe "Pages" do
     	expect(page).to have_title("Sigma Theta Psi | About")
     end
   end
+
+  # Contact Page Tests
+  describe "Contact page" do
+  	it "should have the content 'Contact'" do
+  		visit '/pages/contact'
+  		expect(page).to have_content('Contact')
+  	end
+  	it "should have the right title" do
+    	visit '/pages/contact'
+    	expect(page).to have_title("Sigma Theta Psi | Contact")
+    end
+  end
 end
