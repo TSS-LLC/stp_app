@@ -9,7 +9,7 @@ require 'rails_helper'
 #   end
 # end
 
-describe "User pages" do
+RSpec.describe "UserPages", :type => :request do
 	subject { page }
 
 	describe "signup page" do

@@ -3,8 +3,9 @@ ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
-gem 'bootstrap-sass', '>=2.3.2.0'
-gem 'sprockets', '>=2.11.0'
+gem 'bootstrap-sass', '>= 2.3.2.0'
+gem 'sprockets',      '>= 2.11.0'
+gem 'bcrypt-ruby',    '>= 3.1.2'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
@@ -12,8 +13,8 @@ group :development, :test do
   gem 'rspec-rails', '>= 2.13.1'
   gem 'guard-rspec', '>= 2.5.0'
 
-  gem 'spork-rails', '4.0.0'
-  gem 'guard-spork', '1.5.0'
+  gem 'spork-rails',  '4.0.0'
+  gem 'guard-spork',  '1.5.0'
   gem 'childprocess', '>=0.3.6'
 
 end
