@@ -9,7 +9,7 @@ require 'rails_helper'
 #   end
 # end
 
-describe "Pages" do
+RSpec.describe "Pages", :type => :request do
 
 	subject { page }
 
