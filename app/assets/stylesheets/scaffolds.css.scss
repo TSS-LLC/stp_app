@@ -41,13 +41,24 @@ div {
 
 .field_with_errors {
   padding: 2px;
-  background-color: red;
   display: table;
+  width: 100%;
+  label {
+    border-left: solid 3px #c00;
+    border-radius: 5px;
+    padding-left: 2px;
+  }
+  
+  input, textarea, select, .uneditable-input {
+    border: 1px solid #c00;
+  }
 }
 
 #error_explanation {
-  width: 450px;
-  border: 2px solid red;
+  width:80%;
+  margin: 0 auto;
+  border: 2px solid #c00;
+  border-radius: 5px;
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
