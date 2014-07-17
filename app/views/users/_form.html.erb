@@ -1,6 +1,6 @@
 <%= form_for(@user) do |f| %>
 
-  <!-- Output Errors To Fix -->
+  <!-- Error Alerts -->
   <% if @user.errors.any? %>
     <div id="error_explanation" class="alert alert-danger">
       <!-- TITLE: 
@@ -15,20 +15,22 @@
     </div>
   <% end %>
 
-  <!-- Input Name -->
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <!-- Input Email -->
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-  <!-- Input Password -->
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <!-- Input Password Confirmation -->
-  <%= f.label :password_confirmation, "Confirmation" %>
-  <%= f.password_field :password_confirmation %>
+  <!-- FORM -->
 
-  <!-- Submit Button (Create Account) -->
-  <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+    <!-- Input Name -->
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <!-- Input Email -->
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <!-- Input Password -->
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <!-- Input Password Confirmation -->
+    <%= f.label :password_confirmation, "Confirmation" %>
+    <%= f.password_field :password_confirmation %>
+
+    <!-- Submit Button (Create Account) -->
+    <%= f.submit "Create my account", class: "btn btn-lg btn-primary" %>
 
 <% end %>

@@ -1,0 +1,22 @@
+<!-- new.html.erb -->
+<% provide(:title, "Sign in") %>
+
+<h1>Sign in</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(:session, url: sessions_path) do |f| %>
+    	<!-- Input Email Address On File -->
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+      <!-- Input Password for that Email Address -->
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+      <!-- Sign In Button -->
+      <%= f.submit "Sign in", class: "btn btn-lg btn-primary" %>
+    <% end %>
+
+    <!-- If New User, Provide Link for Sign Up -->
+    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+  </div>
+</div>

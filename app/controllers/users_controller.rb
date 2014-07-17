@@ -29,7 +29,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        flash[:success] = "Welcome to STP App"
+        sign_in @user
+        flash[:success] = "Welcome to the Greek Life"
         format.html { redirect_to @user }
         format.json { render :show, status: :created, location: @user }
       else
