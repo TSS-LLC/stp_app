@@ -1,19 +1,10 @@
-<%= form_for(@user) do |f| %>
+<!-- users/_create_form.html.erb -->
 
+<%= form_for(@user) do |f| %>
+  
   <!-- Error Alerts -->
-  <% if @user.errors.any? %>
-    <div id="error_explanation" class="alert alert-danger">
-      <!-- TITLE: 
-        # errors prohibited this user from being saved: -->
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-      <!-- LIST OF ERRORS -->
-      <ul>
-        <% @user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+
+    <%= render 'shared/error_messages' %>
 
   <!-- FORM -->
 

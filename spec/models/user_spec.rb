@@ -16,8 +16,20 @@ RSpec.describe User, :type => :model do
 	it { should respond_to(:password_confirmation) }
   it { should respond_to(:remember_token) }
 	it { should respond_to(:authenticate) }
+  it { should respond_to(:admin) }
 
 	it { should be_valid }
+  it { should_not be_admin }
+
+  # Testing Admin Attribute
+  describe "with admin attribute set to 'true'" do
+    before do
+      @user.save!
+      @user.toggle!(:admin)
+    end
+
+    it { should be_admin }
+  end
 
 	# Testing Name Present Validation
 	describe "when name is not present" do
@@ -110,11 +122,13 @@ RSpec.describe User, :type => :model do
 		end
 	end
 
+  # Testing Password Validation - Min Length Password
 	describe "with a password that's too short" do
 	  before { @user.password = @user.password_confirmation = "a" * 5 }
 	  it { should be_invalid }
 	end
 
+  # Tesing remember token
   describe "remember token" do
     before { @user.save }
     # its(:remember_token) { should_not be_blank }

@@ -1,6 +1,10 @@
-<h1>Editing user</h1>
+<!-- users/edit.html.erb -->
+<% provide(:title, "Edit User") %>
 
-<%= render 'form' %>
+<h1>Update Your Profile</h1>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<div class="row">
+  <div class="span6 offset3">
+    <%= render 'edit_form' %><br />
+  </div>
+</div>

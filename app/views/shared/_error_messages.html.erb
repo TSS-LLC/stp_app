@@ -1,0 +1,15 @@
+<!-- shared/_error_messages.html.erb -->
+
+<% if @user.errors.any? %>
+  <div id="error_explanation" class="alert alert-danger">
+    <!-- TITLE: 
+      # errors prohibited this user from being saved: -->
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+    <!-- LIST OF ERRORS -->
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

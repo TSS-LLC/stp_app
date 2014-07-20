@@ -1,0 +1,30 @@
+<!-- users/_edit_form.html.erb -->
+
+<%= form_for(@user) do |f| %>
+
+	<!-- Error Alerts -->
+
+    <%= render 'shared/error_messages' %>
+
+	<!-- FORM -->
+
+		<!-- Input Name -->
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+		<!-- Input Email -->
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+		<!-- Input Password -->
+		<%= f.label :password %>
+		<%= f.password_field :password %>
+		<!-- Input Password Confirmation -->
+		<%= f.label :password_confirmation, "Confirm Password" %>
+		<%= f.password_field :password_confirmation %>
+
+		<%= gravatar_for @user %>
+    	<a href="http://gravatar.com/emails">change</a>
+
+		<!-- Submit Button (Save Account Changes) -->
+		<%= f.submit "Save changes", class: "btn btn-lg btn-primary" %>
+
+<% end %>
